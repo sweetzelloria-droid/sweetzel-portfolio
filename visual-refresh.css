@@ -15,82 +15,82 @@ h1,h2,h3{color:var(--navy)}em{color:#ad8132}.section-kicker,.eyebrow{color:#926d
 @media(max-width:640px){html{scroll-padding-top:74px}.site-header{min-height:72px;padding:8px 18px;justify-content:space-between}.brand img{width:42px;height:42px}.brand-copy strong{font-size:18px}.brand-copy small{font-size:8px}.menu-toggle{display:block;flex-shrink:0}.primary-nav{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff9ec;border-top:1px solid #e4dacc;box-shadow:0 9px 18px #17365721;padding:10px 20px 16px}.primary-nav a{display:block!important;padding:11px 0;font-size:15px}.js .primary-nav{display:none}.js .primary-nav.is-open{display:flex}.nav-contact{border:0}.hero{padding:49px 20px 66px}.hero h1{font-size:clamp(40px,10vw,57px);letter-spacing:-1px}.eyebrow{font-size:10px;letter-spacing:1.2px}.hero-text{font-size:16px;line-height:1.75}.hero-actions{gap:16px}.button{padding:14px 18px;font-size:14px}.text-link{font-size:14px}.hero-visual{width:91%;margin-top:4px}.visual-tag{font-size:12px;padding:10px}.achievement-band{padding:23px 15px}.achievement{padding:15px 9px}.achievement strong{font-size:27px}.achievement span{font-size:11px}.intro-band,.section,.contact{padding:62px 20px}.intro-layout{grid-template-columns:1fr;gap:28px}.about-portrait{margin:auto;max-width:205px}.intro-band .about-copy{text-align:left}.intro-band h2{font-size:35px}.intro-band .about-copy p:not(.section-kicker){font-size:15px}.section-heading{margin-bottom:27px}.section-heading h2,.tools-section h2{font-size:37px}.service-grid,.tools-grid{grid-template-columns:1fr}.service-card{min-height:0;padding:24px}.service-card h3{font-size:24px}.tool-group{padding:20px}.process .steps li{gap:18px}.contact h2{font-size:39px}.contact-actions{align-items:flex-start;flex-direction:column}footer{flex-direction:column;padding:22px 20px;gap:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-enter,.hero-image-enter,.grow-highlight:after{animation:none!important}.grow-highlight:after{transform:scaleX(1)}.js .reveal{opacity:1;transform:none;transition:none}.button,.service-card,.tool-pills li,.text-link{transition:none}.button:hover,.service-card:hover,.tool-pills li:hover{transform:none}}
 
+/* SWEETZEL PORTFOLIO: LAYOUT REPAIR */
 
-/* POLISHED LAYOUT FOR NEW HTML SECTIONS */
-
-.achievement-band {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 0 !important;
-  padding: 30px 6% !important;
-  background: #fff9eb !important;
+/* General page and accessible skip link */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.achievement-band .achievement {
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.skip-link {
+  position: fixed !important;
+  left: 14px !important;
+  top: -90px !important;
+  z-index: 9999;
+  background: #fff8e9;
+  color: #173657;
+  padding: 10px 16px;
+}
+
+.skip-link:focus {
+  top: 12px !important;
+}
+
+/* HEADER: single clean row */
+.site-header {
   display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 12px 18px !important;
-  border-right: 1px solid #e2d8c6;
-}
-
-.achievement-band .achievement:last-child {
-  border-right: 0;
-}
-
-.achievement-band .achievement strong {
-  display: block !important;
-  font: 700 clamp(25px, 3vw, 39px)
-    'Playfair Display', Georgia, serif !important;
-  color: #173e69 !important;
-}
-
-.achievement-band .achievement span {
-  display: block !important;
-  margin-top: 7px;
-  font-size: 13px !important;
-  line-height: 1.5;
-  color: #5b6f83;
-}
-
-/* SERVICES: 3 columns, 2 rows */
-.services .service-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 20px !important;
-  align-items: stretch;
-}
-
-.services .service-grid > .service-card {
-  min-width: 0 !important;
-  width: auto !important;
-  max-width: none !important;
-  min-height: 300px;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  min-height: 82px !important;
   height: auto !important;
-  display: flex !important;
+  padding: 12px 5% !important;
+  background: #fff9ee !important;
+}
+
+.site-header .brand {
+  display: inline-flex !important;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header .brand img {
+  width: 54px !important;
+  height: 54px !important;
+  object-fit: contain;
+}
+
+.site-header .brand-copy {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 27px 23px !important;
-  background: #edf4fa !important;
-  border: 1px solid #d8e5f0 !important;
-  border-radius: 10px !important;
-  transition: transform 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
-.services .service-grid > .service-card.featured {
-  background: #cadeef !important;
+.site-header .header-note {
+  margin: 0 auto !important;
+  font-size: 12px !important;
+  white-space: nowrap;
 }
 
-.services .service-grid > .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 26px #1736571d;
+.site-header .primary-nav {
+  display: flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+  position: static !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-.services .service-card h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(20px, 2vw, 26px);
-  line-height: 1.3;
-}
+.site-header .primary-nav a {
