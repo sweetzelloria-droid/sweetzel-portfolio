@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sweetzelloria-droid.github.io/sweetzel-portfolio/sitemap.xml
